@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 3 Years 💓 — Love Letter</title>
+  <meta name="description" content="A cute interactive pixel-art love letter celebrating 1 year of our relationship. Open the envelope and answer the question." />
+  <link type="image/png" sizes="120x120" rel="icon" href=".../icons8-heart rate-3d-sugary-120.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="./baby.css" />
+</head>
+<body>
+  <!-- atmospheric background -->
+  <div class="fx" aria-hidden="true">
+    <div class="fx__aurora"></div>
+    <div class="fx__vignette"></div>
+    <div class="fx__grain"></div>
+  </div>
+
+  <!-- celebration hearts-rain layer (filled by JS on win) -->
+  <div class="rain" id="rain" aria-hidden="true"></div>
+
+  <main class="scene">
+    <!-- Heart confetti layer (parallax depth, filled by JS) -->
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+    <!-- STATE 1: shoot Cupid's arrow at the letter to open it -->
+    <div class="stage stage--aim" id="aimStage" tabindex="0" role="application"
+         aria-label="Aim and shoot Cupid's arrow at the letter to open it. Press space to shoot.">
+
+      <!-- floating target: the closed envelope -->
+      <div class="target" id="target">
+        <div class="envelope" aria-hidden="true">
+          <span class="envelope__flap"></span>
+          <span class="heart envelope__seal"></span>
+        </div>
+        <p class="target__label">
+          <span class="heart heart--inline"></span>
+          Happy 3 Years
+          <span class="heart heart--inline"></span>
+        </p>
+        <p class="target__date">26 September 2027</p>
+      </div>
+
+      <!-- the bow and arrow -->
+      <div class="archer" id="archer" aria-hidden="true">
+        <div class="bow" id="bow"></div>
+        <span class="nock" id="nock"></span>
+        <div class="arrow is-on" id="arrow" aria-hidden="true"></div>
+      </div>
+
+      <p class="hint" id="hint">
+        <span id="hintText">Click, tap, or drag to shoot Cupid&rsquo;s arrow</span>
+        <span class="heart heart--inline"></span>
+      </p>
+    </div>
+
+    <!-- STATE 2: opened "LOVE" window -->
+    <section class="window" id="window" aria-hidden="true">
+      <header class="titlebar">
+        <span class="titlebar__name">Baby</span>
+        <span class="titlebar__btns">
+          <button class="winbtn" type="button" aria-label="Minimize" tabindex="-1">&#95;</button>
+          <button class="winbtn" type="button" aria-label="Maximize" tabindex="-1">&#9633;</button>
+          <button class="winbtn winbtn--x" type="button" id="closeBtn" aria-label="Close letter">&#10005;</button>
+        </span>
+      </header>
+
+      <div class="heartrow" aria-hidden="true">
+        <span class="heart"></span><span class="hdot"></span>
+        <span class="heart"></span><span class="hdot"></span>
+        <span class="heart"></span>
+      </div>
+
+      <div class="content" id="content">
+        <h1 class="title" id="title">Happy 3 year, my baby 💝 Still love me?</h1>
+        <canvas class="cat" id="cat" width="16" height="16" aria-label="A little cat holding a heart" role="img"></canvas>
+        <div class="buttons" id="buttons">
+          <button class="btn btn--yes" type="button" id="yesBtn">YES</button>
+          <button class="btn btn--no"  type="button" id="noBtn">NO</button>
+        </div>
+        <p class="final" id="final" hidden>
+          <span class="final__date">26 September 2027</span><br />
+          3 YEARS OF OUR RELATIONSHIP, MORE YEARS TO GO.
+          HAPPY ANNIVERSARY, Baby ❣️
+          <span class="heart heart--inline"></span>
+          <button class="btn btn--next" type="button" id="nextBtn">Continue ✨</button>
+        </p>
+      </div>
+    </section>
+  </main>
+  <script src="./baby.js"></script>
+</body>
+</html>
