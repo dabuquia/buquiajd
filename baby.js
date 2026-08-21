@@ -756,3 +756,9 @@ if (new URLSearchParams(location.search).has('record')){
     els: { noBtn, yesBtn, content, aimStage, win, nock: nockEl },
   };
 }
+const nextButton = document.getElementById('nextBtn');
+
+// Add a click listener to open the link
+nextButton.addEventListener('click', function() {
+    window.location.href = 'https://www.youtube.com/watch?v=1ROmjX7sLdE';
+});
